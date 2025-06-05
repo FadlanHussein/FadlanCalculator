@@ -1,73 +1,119 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
+.container {
+  text-align: center;
+  margin-top: 100px;
 }
-.Calculator{
-    background-attachment: #f2f2f2;
-    padding: 20px;
-    max-width: 400px;
-    border: 1px solid;
-    margin: auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    margin-top: 40px;
-    margin-block-start: auto;
+* {
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
-#result{
-    width: 100%;
+.Calculator {
+  background-attachment: #f2f2f2;
+  padding: 20px;
+  max-width: 400px;
+  border: 1px solid;
+  margin: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin-top: 40px;
+  padding: top 5px;
+}
+#result {
+  width: 100%;
+  padding: 10px;
+  font-size: 24px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-block-start: 20px;
+}
+button {
+  padding: 10px;
+  font-size: 24px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-colos 0.3s ease;
+}
+button:hover {
+  background-color: #ddd;
+}
+.Clear {
+  background-color: rgb(248, 46, 46);
+  color: #fff;
+}
+.Number,
+.Decimal {
+  background-color: #fff;
+  color: #333;
+}
+.Operator {
+  background-color: rgb(28, 136, 136);
+  color: #fff;
+}
+.Equal {
+  background-color: #f38b15;
+  color: #fff;
+}
+
+.buttons button:nth-last-child(2) {
+  grid-column: span 2;
+}
+
+h2 {
+  color: #333;
+  text-align: right;
+  margin-bottom: 5px;
+}
+p {
+  color: #333;
+  text-align: left;
+  margin-bottom: 5px;
+}
+/* Layar Besar (Desktop) */
+@media (min-width: 1200px) {
+  .buttons {
     padding: 10px;
-    font-size: 24px;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-.buttons{
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    margin-block-start: 20px;
+    gap: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .header h1 {
+    font-size: 3rem;
+  }
 }
-button{
+
+/* Layar Sedang (Tablet Landscape) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .buttons {
     padding: 10px;
-    font-size: 24px;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-colos 0.3s ease;
-}
-button:hover{
-    background-color: #ddd;
-
-}
-.Clear{
-    background-color: rgb(248, 46, 46);
-    color: #fff;
-}
-.Number, .Decimal{
-    background-color: #fff;
-    color: #333;
-}
-.Operator{
-    background-color: rgb(28, 136, 136);
-    color: #fff;
-}
-.Equal{
-    background-color: #f38b15;
-    color: #fff;
-}
-
-.buttons button:nth-last-child(2){
-    grid-column: span 2;
-}
-
-h2{
-    color: #333;
-    text-align: right;
-    margin-bottom: 5px;
-}
-p{
-    color: #333;
-    text-align: left;
-    margin-bottom: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  /* Layar Kecil (Tablet Portrait & Mobile Landscape) */
+  @media (min-width: 576px) and (max-width: 767px) {
+    .container {
+      padding: 5px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .header h1 {
+      font-size: 1.2rem;
+    }
+  }
 }
